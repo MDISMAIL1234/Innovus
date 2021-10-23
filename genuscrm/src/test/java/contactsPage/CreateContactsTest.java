@@ -3,6 +3,7 @@ package contactsPage;
 
 
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.Innovus.Fortell.CreateContactPage;
@@ -14,7 +15,7 @@ import com.Innovus.GenericLib.BaseTest;
 import com.Innovus.GenericLib.FileLib;
 import com.Innovus.GenericLib.WebDriverCommonLib;
 
-
+@Listeners(com.Innovus.GenericLib.MyListeners.class)
 
 public class CreateContactsTest  extends BaseTest{
 	

@@ -10,7 +10,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 
+import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.google.common.io.Files;
 
 public class WebDriverCommonLib {
@@ -60,15 +62,17 @@ public class WebDriverCommonLib {
    public void switchToFrame(WebElement element) {
 	   BaseTest.driver.switchTo().frame(element);
    }
-   public void getFullPageScreenshot(String screenshotPath) {
+   public String getFullPageScreenshot(String screenshotName) {
 	   TakesScreenshot ts = (TakesScreenshot) BaseTest.driver;
 	   File src = ts.getScreenshotAs(OutputType.FILE);
-	   File dest = new File(screenshotPath);
+	   String dest="C:\\Users\\user\\git\\repository\\genuscrm\\Screenshot"+screenshotName+".png";
+	   File destination= new File(dest);
 	   try {
-		   Files.copy(src, dest);
+		   Files.copy(src, destination);
 	   }catch(IOException e) {
 		   e.printStackTrace(); 
 	   }
+	   return dest;
    }
    public void getElementScreenshot(WebElement element, String screenshotPath) {
 	   File src = element.getScreenshotAs(OutputType.FILE);
@@ -83,5 +87,50 @@ public class WebDriverCommonLib {
 	   WebDriverWait wait = new WebDriverWait(BaseTest.driver,30);
 	   wait.until(ExpectedConditions.titleContains(title));
    }
+   
+   public void elementStatus(WebElement element,int checkType, String 
+			elementName)
+	{
+		switch(checkType)
+		{
+		
+		
+		
+		case 1:
+			try {
+				element.isDisplayed();
+				
+				ReportListeners.test.pass(MarkupHelper.createLabel(elementName +"is Displayed",ExtentColor.PURPLE));
+				}
+			catch (Exception e) {
+				
+				ReportListeners.test.info(MarkupHelper.createLabel(elementName+"is not Displayed",ExtentColor.ORANGE));
+			}
+			break;
+		case 2:
+			try {
+				element.isEnabled();
+				ReportListeners.test.info(MarkupHelper.createLabel(elementName+" is Enabled",ExtentColor.PURPLE));
+			}
+			catch (Exception e) {
+				ReportListeners.test.info(MarkupHelper.createLabel(elementName+"is not Enabled",ExtentColor.ORANGE)); 
+				}
+			break;
+		case 3:
+			try {
+				element.isSelected();
+				
+				ReportListeners.test.info(MarkupHelper.createLabel(elementName +"is Selected",ExtentColor.PURPLE));
+				}
+			catch (Exception e) {
+				ReportListeners.test.info(MarkupHelper.createLabel(elementName+"is not Selected",ExtentColor.ORANGE));
+			}
+			break;	
+			}
+		}
+}	
+
+
+
 	   
-}
+
