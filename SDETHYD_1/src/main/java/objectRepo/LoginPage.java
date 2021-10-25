@@ -24,7 +24,8 @@ public class LoginPage //Rule 1 Page should be class name
 	@FindBy(name="user_name")
 	private WebElement usernametxtfld;
                                                                         //WELCOMEs
-	@FindBy(name="user_password")
+	
+	@FindBy(name="user_password")                                        //GOING
 	private WebElement passwordtxtfld;
 
 	@FindBy(id="submitButton")
