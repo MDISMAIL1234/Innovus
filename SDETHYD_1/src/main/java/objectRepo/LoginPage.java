@@ -23,7 +23,7 @@ public class LoginPage //Rule 1 Page should be class name
 	}
 	@FindBy(name="user_name")
 	private WebElement usernametxtfld;
-
+                                                                        //WELCOMEs
 	@FindBy(name="user_password")
 	private WebElement passwordtxtfld;
 
