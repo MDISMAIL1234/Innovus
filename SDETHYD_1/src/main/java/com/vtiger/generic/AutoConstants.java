@@ -6,5 +6,6 @@ public interface AutoConstants {
 	//NEW PURPOSE
 	//NEW PASS
 	// new fail
+	//new fass project
 	///zffg
 }
