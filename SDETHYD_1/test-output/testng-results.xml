@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-23T00:57:51 IST" name="Default suite" finished-at="2021-10-23T00:58:29 IST" duration-ms="38740">
+  <suite started-at="2021-10-26T13:08:33 IST" name="Default suite" finished-at="2021-10-26T13:09:09 IST" duration-ms="36554">
     <groups>
     </groups>
-    <test started-at="2021-10-23T00:57:51 IST" name="Default test" finished-at="2021-10-23T00:58:29 IST" duration-ms="38740">
+    <test started-at="2021-10-26T13:08:33 IST" name="Default test" finished-at="2021-10-26T13:09:09 IST" duration-ms="36554">
       <class name="com.Vtiger.TC_003_CreateContactTest">
-        <test-method signature="createcontact()[pri:0, instance:com.Vtiger.TC_003_CreateContactTest@2ef3eef9]" started-at="2021-10-23T00:57:51 IST" name="createcontact" finished-at="2021-10-23T00:58:29 IST" duration-ms="38652" status="FAIL">
+        <test-method signature="createcontact()[pri:0, instance:com.Vtiger.TC_003_CreateContactTest@243c4f91]" started-at="2021-10-26T13:08:33 IST" name="createcontact" finished-at="2021-10-26T13:09:09 IST" duration-ms="36450" status="FAIL">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[TypeError: browsingContext.currentWindowGlobal is null
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-TJS8AHG', ip: '192.168.139.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 9300, moz:profile: C:\Users\user\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 35617018-f86b-432b-8ed5-18b26c2977bb
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13552, moz:profile: C:\Users\user\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 88ddb52b-dc62-4d5c-a191-c682bb36f5c8
 *** Element info: {Using=xpath, value=//a[@id='1' and text()='RangaReddy']}]]>
             </message>
             <full-stacktrace>
@@ -23,8 +23,8 @@ Session ID: 35617018-f86b-432b-8ed5-18b26c2977bb
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-TJS8AHG', ip: '192.168.139.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 9300, moz:profile: C:\Users\user\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 35617018-f86b-432b-8ed5-18b26c2977bb
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13552, moz:profile: C:\Users\user\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 88ddb52b-dc62-4d5c-a191-c682bb36f5c8
 *** Element info: {Using=xpath, value=//a[@id='1' and text()='RangaReddy']}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
