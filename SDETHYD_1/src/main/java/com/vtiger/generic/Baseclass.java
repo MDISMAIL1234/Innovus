@@ -35,6 +35,7 @@ public class Baseclass {
 	public void launchBrowser() throws Throwable
 	{
 		String browsername=fileutility.readDatafromPropfiles("browser");
+
 		if (browsername.equalsIgnoreCase("ff"))
 		{
 			driver = new FirefoxDriver();
