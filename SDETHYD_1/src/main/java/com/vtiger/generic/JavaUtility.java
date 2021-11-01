@@ -1,5 +1,6 @@
 package com.vtiger.generic;
 
+import java.util.Date;
 import java.util.Random;
 
 public class JavaUtility {
@@ -13,5 +14,12 @@ public class JavaUtility {
 	{
 		Random random = new Random ();
 		return random.nextInt(1000);
+	}
+	public String getCurrentDate()
+	{
+		Date dateobj=new Date();
+		String currentdate=dateobj.toString();
+		System.out.println(currentdate);
+		return currentdate;
 	}
 }

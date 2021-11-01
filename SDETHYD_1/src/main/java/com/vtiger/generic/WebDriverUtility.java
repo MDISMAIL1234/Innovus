@@ -32,7 +32,8 @@ public class WebDriverUtility
 	 * This method will maximise the window
 	 * @param Webdriver driver
 	 */
-	public void maximisewindow(WebDriver driver)
+	public void maximizewindow(WebDriver driver)
+	
 	{
 		driver.manage().window().maximize();
 	}

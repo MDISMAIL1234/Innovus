@@ -1,6 +1,12 @@
 package com.vtiger.generic;
 
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,6 +28,7 @@ public class Baseclass {
 	public	WebDriver driver;
 	public 	FileUtility fileutility = new FileUtility();
 	public HomePage hp;
+	public static WebDriver sDriver;
 	
 	@BeforeSuite(groups={"smoke","Regression"})
 	
@@ -55,6 +62,7 @@ public class Baseclass {
 
 		driver.get(fileutility.readDatafromPropfiles("url"));
 		driver.manage().window().maximize();	
+		sDriver=driver;
 	}
 	@BeforeMethod(groups={"smoke","Regression"})
 
@@ -63,25 +71,41 @@ public class Baseclass {
 		LoginPage lp = new LoginPage(driver);
 		lp.logintoApp();
 	}
-	@AfterClass(groups={"smoke","Regression"}
-	)
-	public void closebrowser()
+//	@AfterClass(groups={"smoke","Regression"}
+//	)
+//	public void closebrowser()
 
-	{
-		driver.close();
-	}
+//	{
+//		driver.close();
+//
+	//}
 	@AfterSuite(groups= {"smoke","Regression"})
 	public void closeConnection()
 	{
 		System.out.println("Close the Connection DataBase");
 	}
+	
 
 
 	@AfterMethod(groups={"smoke","Regression"})
-	public void logout()
+	public void logout() throws InterruptedException
 	{
 		hp = new HomePage(driver);
+		Thread.sleep(3000);
 		hp.logoutfromApp();
+		
+	}
+	@AfterClass(groups= {"smoke","Regression"})
+	public void closebrowser1()
+	{
+		driver.close();
+	}
+	public static String getscreenshot(String name) throws IOException{
+		File srcfile = ((TakesScreenshot) sDriver).getScreenshotAs(OutputType.FILE);
+		String destfile = System.getProperty("user.dir")+"/screenshots/"+name+".PNG";
+		File finaldest = new File(destfile);
+		FileUtils.copyFile(srcfile,finaldest);
+		return destfile;
 	}
 
 
