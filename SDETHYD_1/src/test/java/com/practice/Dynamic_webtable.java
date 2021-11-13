@@ -33,6 +33,7 @@ public class Dynamic_webtable {
 		//Get all Organization name
 		List<WebElement> orgname1 = driver.findElements(By.xpath("//table[@class='lvt small']/tbody/tr[5]/td[3]/a"));
 		String orgnametodelete="Testyantra667";
+		
 		for(int i=2; i<orgname1.size(); i++)
 		{
 			String sl=orgname1.get(i).getText();

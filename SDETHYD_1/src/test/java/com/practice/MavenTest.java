@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 public class MavenTest {
 	@Test
+	
 	public void readDatafromCMD() {
 		String url=System.getProperty("url");
 		WebDriver  driver = new FirefoxDriver();
