@@ -18,3 +18,4 @@ public interface AutoConstants {
 //new 1234
 //new pass and fail
 // new comes
+// new fail
