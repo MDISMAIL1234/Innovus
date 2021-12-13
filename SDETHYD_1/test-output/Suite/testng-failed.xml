@@ -6,31 +6,15 @@
     <classes>
       <class name="com.Vtiger.TC_0001_CreateOrgWith_DDTest">
         <methods>
+          <include name="closebrowser1"/>
           <include name="closeConnection"/>
           <include name="login"/>
           <include name="TC_0001_createOrgwithDD"/>
           <include name="logout"/>
-          <include name="closebrowser"/>
           <include name="startConnection"/>
           <include name="launchBrowser"/>
         </methods>
       </class> <!-- com.Vtiger.TC_0001_CreateOrgWith_DDTest -->
     </classes>
   </test> <!-- Test_runner2(failed) -->
-  <test thread-count="2" parallel="tests" name="Test_runner1(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="com.Vtiger.CreateOrgWith_DDTest">
-        <methods>
-          <include name="closeConnection"/>
-          <include name="login"/>
-          <include name="logout"/>
-          <include name="CreateOrgWithDD"/>
-          <include name="closebrowser"/>
-          <include name="startConnection"/>
-          <include name="launchBrowser"/>
-        </methods>
-      </class> <!-- com.Vtiger.CreateOrgWith_DDTest -->
-    </classes>
-  </test> <!-- Test_runner1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

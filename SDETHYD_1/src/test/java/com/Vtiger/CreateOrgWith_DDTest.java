@@ -1,5 +1,6 @@
 package com.Vtiger;
 
+import java.util.List;
 import java.util.Random;
 
 import java.util.concurrent.TimeUnit;
@@ -40,7 +41,7 @@ public class CreateOrgWith_DDTest extends Baseclass{
 		driver.findElement(By.id("submitButton")).click();
 		//Thread.sleep(1000);
 	*/
-		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
+		//List<WebElement> Org= driver.findElements(By.xpath("//a[']"));
 		//step 4 click on +ban
 		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
 		//step 5 Fill the details and select value from DD

@@ -25,7 +25,8 @@ public class Dynamic_webtable {
 		driver.get("http://localhost:8888/index.php?module=Accounts&action=index");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		driver.findElement(By.name("user_name")).sendKeys("admin");
+		driver.
+		findElement(By.name("user_name")).sendKeys("admin");
 		driver.findElement(By.name("user_password")).sendKeys("12345");
 		driver.findElement(By.id("submitButton")).click();
 		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
@@ -33,6 +34,7 @@ public class Dynamic_webtable {
 		//Get all Organization name
 		List<WebElement> orgname1 = driver.findElements(By.xpath("//table[@class='lvt small']/tbody/tr[5]/td[3]/a"));
 		String orgnametodelete="Testyantra667";
+
 		
 		for(int i=2; i<orgname1.size(); i++)
 		{

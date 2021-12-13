@@ -3,17 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Vtiger.TC_0001_CreateOrgWith_DDTest">
+      <class name="com.Vtiger.TC_003_CreateContactTest">
         <methods>
-          <include name="closebrowser1"/>
-          <include name="closeConnection"/>
-          <include name="login"/>
-          <include name="TC_0001_createOrgwithDD"/>
-          <include name="logout"/>
-          <include name="startConnection"/>
-          <include name="launchBrowser"/>
+          <include name="createcontact"/>
         </methods>
-      </class> <!-- com.Vtiger.TC_0001_CreateOrgWith_DDTest -->
+      </class> <!-- com.Vtiger.TC_003_CreateContactTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

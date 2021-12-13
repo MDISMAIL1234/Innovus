@@ -1,4 +1,5 @@
- 
+
+
 package com.vtiger.generic;
 
 
@@ -26,10 +27,11 @@ import objectRepo.LoginPage;
 public class Baseclass {
 
 
-	public	WebDriver driver;
+	public	static WebDriver driver;
 	public 	FileUtility fileutility = new FileUtility();
-	public HomePage hp;
+	public static HomePage hp;
 	public static WebDriver sDriver;
+	public WebDriverUtility wUtil;
 	
 	@BeforeSuite(groups={"smoke","Regression"})
 	
@@ -42,6 +44,7 @@ public class Baseclass {
 	@BeforeClass(groups={"smoke","Regression"})
 	public void launchBrowser() throws Throwable
 	{
+		
 		String browsername=fileutility.readDatafromPropfiles("browser");
 
 		if (browsername.equalsIgnoreCase("ff"))
@@ -72,13 +75,13 @@ public class Baseclass {
 		LoginPage lp = new LoginPage(driver);
 		lp.logintoApp();
 	}
-//	@AfterClass(groups={"smoke","Regression"}
-//	)
-//	public void closebrowser()
+	//@AfterClass(groups={"smoke","Regression"})
+	
+	//public void closebrowser()
 
-//	{
-//		driver.close();
-//
+	//{
+		//driver.close();
+
 	//}
 	@AfterSuite(groups= {"smoke","Regression"})
 	public void closeConnection()
@@ -92,8 +95,9 @@ public class Baseclass {
 	public void logout() throws InterruptedException
 	{
 		hp = new HomePage(driver);
-		Thread.sleep(3000);
+//		wUtil.pageloadtimeout(driver);
 		hp.logoutfromApp();
+		
 		
 	}
 	@AfterClass(groups= {"smoke","Regression"})

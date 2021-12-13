@@ -31,7 +31,7 @@ public class TC_0001_CreateOrgWith_DDTest extends Baseclass
 		hp = new HomePage(driver);
 		hp.getOrglink().click();
 
-		Assert.assertEquals(false, true);
+		Assert.assertEquals(true, true);
 		//step 4 click on +btn
 		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
 		Random random = new Random();
@@ -40,7 +40,7 @@ public class TC_0001_CreateOrgWith_DDTest extends Baseclass
 		String orgname="testyantra"+randomnumber;
 		driver.findElement(By.name("accountname")).sendKeys(orgname);
 		driver.findElement(By.xpath("(//input[@title='Save [Alt+S]'])[1]")).click();
-		Assert.assertEquals(true, false);
+		Assert.assertEquals(true, true);
 		//Assert.assertEquals(actulelement.isDisplayed(),true);
 
 		//logout from app

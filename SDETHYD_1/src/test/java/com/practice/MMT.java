@@ -27,6 +27,7 @@ public class MMT {
 		driver.findElement(By.xpath("//div[contains(text(),'BOM')]")).click();
 		driver.findElement(By.id("toCity")).sendKeys("GOI");
 		driver.findElement(By.xpath("//div[contains(text(),'GOI')]")).click();
+
 		driver.findElement(By.xpath("//span[text()='DEPARTURE']")).click();
 		driver.findElement(ById.xpath("//div[@aria-label='Tue Oct 05 2021']")).click();
 		

@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.vtiger.generic.WebDriverUtility;
+
 public class CreateNewOrgPage {
 	WebDriver driver;
 	
@@ -43,5 +45,22 @@ public class CreateNewOrgPage {
 	public WebElement getSaveorgbtn() {
 		return saveorgbtn;
 	}
+	public void firstdropdown(String abc1) {
+		 WebDriverUtility wutil= new WebDriverUtility();  
+		 wutil.selectelementfromDropdown(rating, abc1);
+		return ;   
+		
+	}
+	public WebElement firstname() {
+		
+		return firstname();
+	}
+	public WebElement lastname() {
+		return lastname();
+	}
+	
+	
+		
+	}
 
-}
+

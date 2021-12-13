@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,7 +28,7 @@ public class WebDriverUtility
 	 */
 	public void pageloadtimeout(WebDriver driver)
 	{
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	}
 	/**
 	 * This method will maximise the window
@@ -158,7 +160,24 @@ public class WebDriverUtility
 			if(currenttitle.contains(title)) {
 				break;
 			}
-			
+			 driver.close();
 		}
 	}
+
+	public void switchTowindow(WebDriver driver) 
+	{
+
+
+	}
+
+	 public void scrolldown(WebDriver driver,Point Element)
+	 {
+		 JavascriptExecutor jse= (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy"+Element);
+	 }
+
 }
+
+	
+	
+

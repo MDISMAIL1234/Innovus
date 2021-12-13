@@ -1,8 +1,10 @@
 package com.Vtiger;
 
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
@@ -13,6 +15,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -63,7 +66,7 @@ public class TC_003_CreateContactTest {
 		System.out.println(orgname);
 		
 
-		WebDriver driver =new FirefoxDriver();
+		WebDriver driver =new ChromeDriver();
 		driver.get("http://localhost:8888/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
@@ -95,9 +98,10 @@ public class TC_003_CreateContactTest {
 		Thread.sleep(3000);
 		//driver.findElement(By.id("search_text")).sendKeys("RangaReddy");
         driver.findElement(By.name("search")).click();
-		driver.findElement(By.xpath("//a[@id='1' and text()='RangaReddy']"));
+		//driver.findElement(By.xpath("//a[@id='1' and text()='RangaReddy']"));
 	//	driver.findElement(By.xpath("//a[@title='Contacts' and text()='"+wb.getSheet("Sheet2").getRow(1).getCell(7)+"']")).click();
-		
+        List<WebElement> names=	driver.findElements(By.xpath("(//table)[7]//tr[*]//td//a"));
+        names.get(1).click();
 		driver.switchTo().window(parentWindow);
 		//String abc2 = wb.getSheet("Sheet2").getRow(1).getCell(4).toString();
 		//WebElement Leadsource = driver.findElement(By.name("leadsource"));
@@ -108,7 +112,7 @@ public class TC_003_CreateContactTest {
 		
 		
 		//save the contact after selecting org
-		driver.findElement(By.xpath("//input[@title='Save [Alt+S']")).click();
+		//driver.findElement(By.xpath("//input[@title='Save [Alt+S']")).click();
 		driver.navigate().refresh();
 		
 		Thread.sleep(5000);
@@ -135,8 +139,8 @@ public class TC_003_CreateContactTest {
 			Actions action = new Actions(driver);
 			action.moveToElement(driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"))).build().perform();
 
-			driver.findElement(By.xpath("//a[text()='Sign Out']")).click();
-
+			//driver.findElement(By.xpath("//a[text()='Sign Out']")).click();
+			driver.findElement(By.name("submit")).click();
 			//Close the browser
 			Thread.sleep(5000);
 			driver.close();

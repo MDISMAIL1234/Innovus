@@ -30,7 +30,7 @@ import com.vtiger.generic.WebDriverUtility;
 import objectRepo.HomePage;
 
 public class CreateOrgwith_DDTest2 extends Baseclass{	
-	WebDriver driver;
+	//WebDriver driver;
 
 	@Test(groups = "Regression")
 	public void createcontact() throws InterruptedException, IOException{
@@ -43,7 +43,7 @@ public class CreateOrgwith_DDTest2 extends Baseclass{
 		JavaUtility jv = new JavaUtility();
 		int randomnumber=jv.generateRandomNo();
 		
-		FileInputStream fis =new FileInputStream("../IsmailPractice/config.properties");
+		FileInputStream fis =new FileInputStream("./config.properties");
 		Properties prop = new Properties();
 		prop.load(fis);
 		
@@ -138,8 +138,8 @@ public class CreateOrgwith_DDTest2 extends Baseclass{
 		System.out.println(orgname);
 		
 
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		
 		//step 2 Login to app
 		//driver.findElement(By.name("user_name")).sendKeys(prop.getProperty("username"));
@@ -182,8 +182,8 @@ public class CreateOrgwith_DDTest2 extends Baseclass{
 		action.moveToElement(driver.findElement(By.xpath("//img[@src='themes/softed/images/btnL3Add.gif']"))).click();
 		//webutility.movetoelement(driver,driver.findElement(By.xpath("//img[@src='themes/softed/images/select.gif']")));
 		
-		driver.findElement(By.xpath("//a[text()='Sign Out']")).click();
-		
+		//driver.findElement(By.xpath("//a[text()='Sign Out']")).click();
+		driver.findElement(By.name("submit")).click();
 		//close the browser
 		Thread.sleep(5000);
 		

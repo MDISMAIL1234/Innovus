@@ -6,11 +6,15 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+import com.vtiger.generic.WebDriverUtility;
 
 
 public class TC_004_CreateContactTest {
@@ -23,12 +27,13 @@ public class TC_004_CreateContactTest {
 	String orgname="Bagalkot"+randomnumber;
 
 	System.out.println(orgname);
-	WebDriver driver = new FirefoxDriver();
+	WebDriver driver = new ChromeDriver();
 	driver.get("http://localhost:8888/index.php?module=Accounts&action=index");
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	
 	//step 2 Login to app
+	WebDriverUtility Webutility=new WebDriverUtility();
 	driver.findElement(By.name("user_name")).sendKeys("admin");
 	driver.findElement(By.name("user_password")).sendKeys("12345");
 	driver.findElement(By.id("submitButton")).click();
@@ -46,7 +51,7 @@ public class TC_004_CreateContactTest {
 		driver.findElement(By.name("lastname")).sendKeys("Karnataka");
 		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//a[text()='Contacts']")).click();
+		driver.findElement(By.xpath("//a[.=\"Contacts\"]")).click();
 		//Check contact is created or not
 				driver.findElement(By.xpath("//input[@class='txtBox']")).sendKeys("Bagalkot");
 				
@@ -61,12 +66,19 @@ public class TC_004_CreateContactTest {
 				driver.navigate().refresh();
 				//Logout from APP
 				Actions action =new Actions(driver);
+			
+				action.moveToElement(driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"))).click();
+			
 				
-				action.moveToElement(driver.findElement(By.xpath("//img[@src='themes/softed/images/select.gif']"))).click();
-				
-				driver.findElement(By.xpath("//a[text()='Sign Out']")).click();
+				//driver.findElement(By.xpath("//a[.='Sign Out']")).click();
 		
+				driver.findElement(By.name("submit")).click();
+				
+				//action.moveToElement(driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"))).build().perform();
 
+				//driver.findElement(By.xpath("//a[text()='Sign Out']")).click();
+
+				//Reporter.log("true");
 	
 
 

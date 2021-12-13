@@ -3,7 +3,7 @@ package com.Vtiger;
 import org.testng.annotations.Test;
 
 public class Testpriority {
-	@Test(priority = 2)
+	@Test(priority = 0)
 	public void createOrg() {
 		System.out.println("Test")	;	
 	}
@@ -15,7 +15,7 @@ public class Testpriority {
 		
 		
 	}
-	@Test(priority = 3)
+	@Test(priority = 0)
 	public void deleteOrg() {
 		System.out.println("validate");
 		

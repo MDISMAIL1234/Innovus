@@ -22,7 +22,7 @@ public class HomePage {
 	@FindBy(xpath="//a[text()='Contacts']")
 	private WebElement contactslink;
 	
-	@FindBy(xpath="//img[@src='themes/softed/images/select.gif']")
+	@FindBy(xpath="//img[@src='themes/softed/images/user.PNG']")
 	private WebElement logoutimg;
 	
 	@FindBy(xpath="//a[text()='Sign Out']")
@@ -36,11 +36,11 @@ public class HomePage {
 	public WebElement getContactslink() {
 		return contactslink;
 	}
-public void logoutfromApp()
+public void logoutfromApp() throws InterruptedException
 {
-	
+	Thread.sleep(2000);
 	Webutility.movetoelement(driver,logoutimg);
-
+	Thread.sleep(2000);
 	logoutbtn.click();
 }
 }
